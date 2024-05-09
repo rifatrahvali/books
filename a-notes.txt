@@ -34,3 +34,7 @@
         ACCOUNT KLASORUNUN ALTINDA REGISTER.BLADE
         public function register(){}
 7   -   KAYIT SAYFASININ URL'I CALISTIGINDA ROTAYI VE controller BAGLANTISINI SAGLADIK.
+
+
+9   -   KULLANICI GİRİŞ
+    php artisan make:view account\login

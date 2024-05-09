@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\User;
 use Illuminate\Http\Request;
-use Validator;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+
 class AccountController extends Controller
 {
     // 6 - kayıt sayfasını görüntüleyecek fonksiyon GET
@@ -22,6 +24,19 @@ class AccountController extends Controller
         if ($validator->fails()) {
             return redirect()->route('account.register')->withInput()->withErrors($validator);
         }
+
+        // Kullanıcı kayıt
+        $user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect()->route('account.login')->with('success','Kayıt başarılı.');
+    }
+
+    public function login(){
+        return view("account.login");
     }
 }
 
