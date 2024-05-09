@@ -38,3 +38,15 @@
 
 9   -   KULLANICI GİRİŞ
     php artisan make:view account\login
+
+10  -   LAYOUTLAR
+    php artisan make:view layouts/app
+
+
+13  -   MIDDLEWARE YAPISI
+    BOOTSTRAP   ->  APP.php
+        DOSYASINDA MIDDLEWARE ILE KULLANICI DAHA ÖNCE OTURUM AÇMIŞSA VE
+        TEKRARDAN LOGIN EKRANINI GORUNTULEMEK ISTERSE BELIRLEDIGIMIZ SAYFAYA YONLENDIRECEGIZ.
+
+
+14  -   logout
