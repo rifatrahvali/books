@@ -50,3 +50,14 @@
 
 
 14  -   logout
+
+
+15  -   kullanıcı var ise hata döndür
+
+
+17  -   $user değişkeni kullanarak
+        sisteme giriş yapan kullanıcının bilgilerini profil sayfasına iletelim.
+        bu sayede form inputların içerisine bilgileri aktarmış olacağız.
+
+
+18  -   profil bilgilerini güncelleyelim

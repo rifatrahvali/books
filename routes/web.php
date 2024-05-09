@@ -22,5 +22,6 @@ Route::group(['prefix' => 'account'], function () {
         // 11 -
         Route::get('profile', [AccountController::class, 'profile'])->name('account.profile');
         Route::get('logout', [AccountController::class, 'logout'])->name('account.logout');
+        Route::post('update-profile', [AccountController::class, 'updateProfile'])->name('account.updateProfile');
     });
 });
