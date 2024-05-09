@@ -1,0 +1,36 @@
+1   -   db'den mysql ayarı yaptık
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=8080
+    DB_DATABASE=laravel8
+    DB_USERNAME=root
+    DB_PASSWORD=
+2   -   config>database>
+    'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+    satırını
+    'collation' => env('DB_COLLATION', 'utf8mb4_turkish_ci'),
+    olarak değiştik
+
+3   -    ENV
+    env> DB ayarlarına
+    DB_COLLATION ekledik
+
+4   -   TABLO - STUN AYARI
+        migrationlarda rol sütunu ekledik
+        database    >   migrations  >   create_users_table
+            >   Schema::create('users')   >
+            >   $table->enum('role',['user','admin'])->default('user'); // Satırını ekledik
+
+        NOT : USER TABLOSUNA KULLANICI ROL'Ü SÜTUNU EKLEDİK.
+        NOT : ŞEMALAR TABLODUR.
+    NOT : TABLODA DEĞİŞİKLİK YAPILDIĞINDA VERİTABANINA DEĞİŞİKLİĞİ HABER VER.
+        php artisan migrate
+
+5   -   KULLANICI KAYIT
+    php artisan make:controller AccountController
+    php artisan make:view account\register
+
+6   -   KAYIT SAYFASINI GÖRÜNTÜLEYECEK FONKSİYON
+        ACCOUNT KLASORUNUN ALTINDA REGISTER.BLADE
+        public function register(){}
+7   -   KAYIT SAYFASININ URL'I CALISTIGINDA ROTAYI VE controller BAGLANTISINI SAGLADIK.
