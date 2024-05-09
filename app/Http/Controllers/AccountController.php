@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Validator;
 class AccountController extends Controller
 {
-    // 6 - kayıt sayfasını görüntüleyecek fonksiyon
+    // 6 - kayıt sayfasını görüntüleyecek fonksiyon GET
     public function register(){
         return view("account.register");
     }
-    // 8 - bu fonksiyon kullanıcıyı kayıt edecektir.
+    // 8 - bu fonksiyon kullanıcıyı kayıt edecektir. POST
     public function processRegister(Request $request){
         $validator = Validator::make($request->all(), [
             'name'=>'required|min:3',
